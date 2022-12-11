@@ -12,7 +12,6 @@ function trimProperties(obj) {
   return copy
 }
 
-trimProperties({ foo: '  foo ', bar: 'bar ', baz: ' baz' })
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
  * @param {object} obj - an object with properties that are strings
@@ -22,7 +21,10 @@ trimProperties({ foo: '  foo ', bar: 'bar ', baz: ' baz' })
  * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
  */
 function trimPropertiesMutation(obj) {
-  // ✨ implement
+  for(let x in obj) {
+    obj[x] = obj[x].trim()
+  }
+  return obj
 }
 
 /**
