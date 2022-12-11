@@ -7,9 +7,12 @@
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
 function trimProperties(obj) {
-  // ✨ implement
+  const copy = {...obj}
+  Object.keys(copy).forEach(el => copy[el] = copy[el].trim())
+  return copy
 }
 
+trimProperties({ foo: '  foo ', bar: 'bar ', baz: ' baz' })
 /**
  * [Exercise 2] trimPropertiesMutation trims in place the properties of an object
  * @param {object} obj - an object with properties that are strings
