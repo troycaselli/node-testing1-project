@@ -43,15 +43,13 @@ function findLargestInteger(integers) {
   return result
 }
 
-findLargestInteger([{ integer: 1 }, { integer: 3 }, { integer: 2 }])
-
 class Counter {
   /**
    * [Exercise 4A] Counter creates a counter
    * @param {number} initialNumber - the initial state of the count
    */
   constructor(initialNumber) {
-    // ✨ initialize whatever properties are needed
+    this.number = initialNumber
   }
 
   /**
@@ -67,9 +65,22 @@ class Counter {
    * counter.countDown() // returns 0
    */
   countDown() {
-    // ✨ implement
+    if(this.number > 0) {
+      return this.number --
+    } else {
+      return 0
+    }
   }
 }
+
+const counter = new Counter(3)
+console.log(counter.countDown())
+console.log(counter.countDown())
+console.log(counter.countDown())
+console.log(counter.countDown())
+console.log(counter.countDown())
+console.log(counter.countDown())
+console.log(counter.countDown())
 
 class Seasons {
   /**
