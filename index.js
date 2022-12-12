@@ -66,28 +66,23 @@ class Counter {
    */
   countDown() {
     if(this.number > 0) {
+      // returns number and then decrements for next round
+        // --this.number would decrement before returning
       return this.number --
     } else {
       return 0
     }
+  // alternative solution
+  // return this.count > 0 ? this.count : 0
   }
 }
-
-const counter = new Counter(3)
-console.log(counter.countDown())
-console.log(counter.countDown())
-console.log(counter.countDown())
-console.log(counter.countDown())
-console.log(counter.countDown())
-console.log(counter.countDown())
-console.log(counter.countDown())
 
 class Seasons {
   /**
    * [Exercise 5A] Seasons creates a seasons object
    */
   constructor() {
-    // ✨ initialize whatever properties are needed
+    this.season = 'spring'
   }
 
   /**
@@ -103,7 +98,16 @@ class Seasons {
    * seasons.next() // returns "summer"
    */
   next() {
-    // ✨ implement
+    if(this.season === 'spring') {
+      this.season = 'summer'
+    } else if(this.season === 'summer') {
+      this.season = 'fall'
+    } else if(this.season === 'fall') {
+      this.season = 'winter'
+    } else {
+      this.season = 'spring'
+    }
+    return this.season
   }
 }
 
