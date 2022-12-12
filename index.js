@@ -140,7 +140,7 @@ class Car {
    */
   drive(distance) {
     const maxDistance = this.tank * this.mpg
-    if(distance < maxDistance) {
+    if(distance <=maxDistance) {
       this.tank -= distance / this.mpg
       this.odometer += distance
     } else {
@@ -163,7 +163,7 @@ class Car {
    */
   refuel(gallons) {
     const maxRefill = this.tankSize - this.tank
-    if(gallons < maxRefill) {
+    if(gallons <= maxRefill) {
       this.tank += gallons
     } else {
       this.tank = 20
